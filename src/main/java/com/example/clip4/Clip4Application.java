@@ -15,6 +15,13 @@ public class Clip4Application {
     }
 
     @Bean
+    public ApplicationRunner runner (ClipProducer clipProducer) {
+        return args -> {
+            clipProducer.async("clip4-listener", "Hello, Clip4 listener.");
+        };
+    }
+
+    /*@Bean
     public ApplicationRunner runner (ClipProducer clipProducer,
                                      KafkaMessageListenerContainer<String, String> kafkaMessageListenerContainer) {
         return args -> {
@@ -36,5 +43,5 @@ public class Clip4Application {
             System.out.println("-- stop --");
             kafkaMessageListenerContainer.stop();
         };
-    }
+    }*/
 }
