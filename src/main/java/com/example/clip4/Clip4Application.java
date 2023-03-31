@@ -19,7 +19,7 @@ public class Clip4Application {
     public ApplicationRunner runner (ClipProducer clipProducer) {
         return args -> {
             //clipProducer.async("clip4-listener", "Hello, Clip4 listener.");
-            clipProducer.async("clip-animal", new Animal("puppy", 1);
+            clipProducer.async("clip4-animal", new Animal("puppy", 1));
         };
     }
 

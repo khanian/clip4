@@ -29,7 +29,7 @@ public class ClipConsumer {
         );
     }
 
-    @KafkaListener(id = "clip4-animal-listener-id", topics = "clip-animal")
+    @KafkaListener(id = "clip4-animal-listener-id", topics = "clip4-animal")
     public void listenAnimal(Animal animal) {
         System.out.println("Animal. animal=" + animal);
     }
