@@ -1,5 +1,6 @@
 package com.example.clip4;
 
+import com.example.clip4.model.Animal;
 import com.example.clip4.producer.ClipProducer;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -17,7 +18,8 @@ public class Clip4Application {
     @Bean
     public ApplicationRunner runner (ClipProducer clipProducer) {
         return args -> {
-            clipProducer.async("clip4-listener", "Hello, Clip4 listener.");
+            //clipProducer.async("clip4-listener", "Hello, Clip4 listener.");
+            clipProducer.async("clip-animal", new Animal("puppy", 1);
         };
     }
 

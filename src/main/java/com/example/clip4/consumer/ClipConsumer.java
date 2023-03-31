@@ -1,5 +1,6 @@
 package com.example.clip4.consumer;
 
+import com.example.clip4.model.Animal;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.listener.adapter.ConsumerRecordMetadata;
 import org.springframework.kafka.support.KafkaHeaders;
@@ -26,6 +27,11 @@ public class ClipConsumer {
                 + " timestamp=" + new Date(timestamp)
                 + " message=" + message
         );
+    }
+
+    @KafkaListener(id = "clip4-animal-listener-id", topics = "clip-animal")
+    public void listenAnimal(Animal animal) {
+        System.out.println("Animal. animal=" + animal);
     }
 
 }
