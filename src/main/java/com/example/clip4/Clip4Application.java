@@ -5,6 +5,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.kafka.listener.KafkaMessageListenerContainer;
 
 @SpringBootApplication
 public class Clip4Application {
@@ -14,9 +15,10 @@ public class Clip4Application {
     }
 
     @Bean
-    public ApplicationRunner runner (ClipProducer clipProducer) {
+    public ApplicationRunner runner (ClipProducer clipProducer,
+                                     KafkaMessageListenerContainer<String, String> kafkaMessageListenerContainer) {
         return args -> {
-
+            kafkaMessageListenerContainer.start();
         };
     }
 
