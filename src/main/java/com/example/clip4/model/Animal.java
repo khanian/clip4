@@ -3,9 +3,13 @@ package com.example.clip4.model;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.validation.constraints.Max;
+
 public class Animal {
 
     private final String name;
+
+    @Max(10)
     private final int age;
 
 

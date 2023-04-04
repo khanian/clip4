@@ -8,6 +8,7 @@ import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Service;
 
+import javax.validation.Valid;
 import java.time.chrono.ChronoLocalDate;
 import java.util.Date;
 
@@ -29,8 +30,8 @@ public class ClipConsumer {
         );
     }
 
-    @KafkaListener(id = "clip4-animal-listener-id", topics = "clip4-animal")
-    public void listenAnimal(Animal animal) {
+    @KafkaListener(id = "clip4-animal-listener-id", topics = "clip4-animal", containerFactory ="kafkaJsonContainerFactory")
+    public void listenAnimal(@Valid Animal animal) {
         System.out.println("Animal. animal=" + animal);
     }
 
