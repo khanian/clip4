@@ -6,7 +6,6 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.kafka.listener.KafkaMessageListenerContainer;
 
 @SpringBootApplication
 public class Clip4Application {
@@ -19,7 +18,7 @@ public class Clip4Application {
     public ApplicationRunner runner (ClipProducer clipProducer) {
         return args -> {
             //clipProducer.async("clip4-listener", "Hello, Clip4 listener.");
-            clipProducer.async("clip4-animal", new Animal("puppy", 15));
+            clipProducer.async("clip4-animal", new Animal("puppy", 3));
         };
     }
 

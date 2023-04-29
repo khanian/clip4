@@ -15,6 +15,7 @@ public class ClipProducer {
     private final KafkaTemplate<String, String> kafkaTemplate;
     private final KafkaTemplate<String, Animal> kafkaJsonTemplate;
 
+
     public ClipProducer(KafkaTemplate<String, String> kafkaTemplate, KafkaTemplate<String, Animal> kafkaJsonTemplate) {
         this.kafkaTemplate = kafkaTemplate;
         this.kafkaJsonTemplate = kafkaJsonTemplate;
