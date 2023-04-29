@@ -17,7 +17,7 @@ public class Clip4Application {
     @Bean
     public ApplicationRunner runner (ClipProducer clipProducer) {
         return args -> {
-            //clipProducer.async("clip4-listener", "Hello, Clip4 listener.");
+            clipProducer.async("clip4-listener", "Hello, Clip4 listener.");
             clipProducer.async("clip4-animal", new Animal("puppy", 3));
         };
     }

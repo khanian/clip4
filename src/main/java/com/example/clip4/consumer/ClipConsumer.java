@@ -13,7 +13,7 @@ import java.util.Date;
 @Service
 public class ClipConsumer {
 
-    @KafkaListener(id = "clip4-listener-id", topics = "clip4-listener")
+    @KafkaListener(id = "clip4-listener-id", topics = "clip4-listener", concurrency= "2", clientIdPrefix = "listener-id")
     public void listen(String message,
                        @Header(KafkaHeaders.RECEIVED_TIMESTAMP) long timestamp,
                        @Header(KafkaHeaders.RECEIVED_PARTITION_ID) int partition,
